@@ -1,0 +1,19 @@
+<div class="well">
+  <form class="form-horizontal" name="playlistForm">
+    <fieldset>
+      <legend>New Playlist</legend>
+      <div class="form-group" >
+        <label class="col-xs-2 control-label">Name</label>
+        <div class="col-xs-10">
+          <input name = listName required ng-maxlength="16" class="form-control" type="text" ng-model='listName'>
+        </div>
+      </div>
+      <div class="form-group">     
+        <div class="col-xs-10 col-xs-offset-2">
+          <button ng-click = 'submit()' ng-disabled = "playlistForm.$invalid" type="submit" class="btn btn-success">Create Playlist</button>
+          <div ng-hide = "createdPlaylist || playlistForm.$valid || playlistForm.$pristine || listName == undefined  " class="alert alert-warning">Please Enter a Shorter Name</div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
